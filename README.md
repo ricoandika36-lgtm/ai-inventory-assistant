@@ -1,57 +1,119 @@
+AI-Powered Inventory Management Assistant
 
-AI-POWERED INVENTORY MANAGEMENT ASSISTANT
+A simple inventory management web application integrated with an AI Assistant to help small businesses manage, monitor, and understand their inventory more efficiently.
 
-LAYER 1 — ROLE & CONTEXT
+Overview
 
-You are an experienced full-stack developer and AI application designer. Build a simple inventory management web application integrated with an AI Inventory Assistant.
+AI-Powered Inventory Management Assistant is a lightweight web application designed to simplify inventory management for small and medium-sized businesses (SMEs).
 
-The application is designed for small retail businesses and SMEs that need an efficient way to manage inventory and understand their stock conditions.
+The application combines basic inventory management features with an AI Assistant that helps users analyze stock conditions, identify low-stock products, generate inventory summaries, and provide simple restocking recommendations.
 
-The AI Assistant acts as an intelligent inventory assistant that helps users analyze inventory information and make better stock management decisions.
+The main goal is to make inventory information easier to access and help business owners make better stock management decisions.
 
-LAYER 2 — TASK & REQUIREMENTS
+Features
 
-Build a responsive one-page inventory management application with the following features:
+Inventory Management
 
-Inventory Management:
+- Inventory dashboard with stock statistics.
+- Product inventory table.
+- Add and delete inventory items.
+- Search products by name.
+- Low-stock indicators.
+- Local data persistence using LocalStorage.
 
-1. Display inventory statistics and dashboard summaries.
-2. Show an inventory table containing product names, categories, quantities, and stock status.
-3. Allow users to add and delete inventory items.
-4. Provide a search feature for inventory items.
-5. Display low-stock indicators based on minimum stock levels.
+AI Inventory Assistant
 
-AI Inventory Assistant:
+- Interactive chat interface.
+- Answer questions about inventory data.
+- Identify products with low stock levels.
+- Generate inventory summaries.
+- Provide restocking recommendations.
+- Explain recommendations based on available inventory data.
 
-1. Provide a chat interface for interacting with the AI Assistant.
-2. Answer questions about available inventory data.
-3. Identify products with low stock levels.
-4. Generate inventory summaries.
-5. Provide simple restocking recommendations based on available stock information.
-6. Explain its recommendations using the available inventory data.
+Technology Stack
 
-LAYER 3 — CONSTRAINTS & OUTPUT
+Technology| Purpose
+HTML5| Application structure
+CSS3| Styling and responsive layout
+JavaScript| Application logic and interactions
+LocalStorage| Local inventory data persistence
+IBM Bob| AI-assisted development
 
-Technical constraints:
+Project Structure
 
-- Use HTML, CSS, and vanilla JavaScript.
-- Do not use frontend frameworks.
-- Use LocalStorage for inventory persistence.
-- Create a responsive and user-friendly interface.
-- Keep the application simple and lightweight.
+ai-inventory-assistant/
+│
+├── index.html
+├── style.css
+├── script.js
+│
+├── assets/
+│   └── images/
+│
+├── screenshots/
+│
+└── README.md
 
-AI constraints:
+Getting Started
 
-- The AI Assistant must use available inventory data when answering inventory-related questions.
-- Never invent product names, quantities, or inventory information.
-- Clearly state when the required information is unavailable.
-- Provide concise, structured, and understandable responses.
-- Distinguish actual inventory data from recommendations.
+Prerequisites
 
-Output:
+- A modern web browser.
+- A code editor (Visual Studio Code recommended).
 
-- index.html
-- style.css
-- script.js
+Installation
 
-Ensure that the inventory management features and AI Assistant interaction are functional and integrated into one application.
+1. Clone the repository:
+
+git clone https://github.com/YOUR-USERNAME/ai-inventory-assistant.git
+
+2. Navigate to the project directory:
+
+cd ai-inventory-assistant
+
+3. Open "index.html" in your browser.
+
+No additional package installation is required for the basic frontend application.
+
+AI Assistant Capabilities
+
+The AI Assistant is designed to support inventory-related questions and provide insights based on available inventory information.
+
+Example interactions:
+
+User:
+Which products have stock levels below 5 units?
+
+AI Assistant:
+The following products have stock levels below 5 units. These items should be considered for restocking.
+
+User:
+Give me an overview of my inventory.
+
+AI Assistant:
+The assistant provides a summary of available products and their current stock conditions.
+
+Note: AI response capabilities depend on the implemented AI integration and available inventory data.
+
+Future Improvements
+
+Potential future enhancements include:
+
+- Database integration for persistent inventory management.
+- Sales trend analysis.
+- Machine learning-based stock prediction.
+- Automated low-stock notifications.
+- AI-powered purchasing recommendations.
+- Integration with sales and business management systems.
+
+Project Purpose
+
+This project was developed as part of the UNSIA × Hacktiv8 Capstone Project to explore AI Agent development, prompt engineering, and practical applications of AI in business operations.
+
+Author
+
+Developed by Rico Andika
+
+License
+
+This project is intended for educational and learning purposes.
