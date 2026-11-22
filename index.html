@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inventory Management Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ── Header ───────────────────────────────────────── -->
+  <header>
+    <div class="header-inner">
+      <h1>Inventory Dashboard</h1>
+      <button class="chat-toggle" id="chat-toggle" aria-label="Toggle AI Assistant">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+        </svg>
+        AI Assistant
+      </button>
+    </div>
+  </header>
+
+  <!-- ── App shell ─────────────────────────────────────── -->
+  <div class="app-shell" id="app-shell">
+
+    <!-- ════════ LEFT — Inventory panel ════════ -->
+    <div class="inventory-panel">
+
+      <!-- Statistics -->
+      <section class="stats">
+        <div class="stat-card">
+          <span class="stat-label">Total Items</span>
+          <span class="stat-value" id="stat-total">0</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Total Quantity</span>
+          <span class="stat-value" id="stat-quantity">0</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Low Stock</span>
+          <span class="stat-value warning" id="stat-lowstock">0</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Categories</span>
+          <span class="stat-value" id="stat-categories">0</span>
+        </div>
+      </section>
+
+      <!-- Add Item Form -->
+      <section class="form-section">
+        <h2>Add New Item</h2>
+        <form id="add-form">
+          <div class="form-row">
+            <input type="text"   id="item-name"     placeholder="Item name"      required />
+            <input type="text"   id="item-category" placeholder="Category"       required />
+            <input type="number" id="item-quantity"  placeholder="Quantity"      min="0" required />
+            <input type="number" id="item-price"     placeholder="Price ($)"     min="0" step="0.01" required />
+            <input type="number" id="item-minstock"  placeholder="Min. stock"    min="0" value="10" />
+            <button type="submit">Add Item</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Search -->
+      <section class="search-section">
+        <input
+          type="search"
+          id="search-input"
+          placeholder="Search by name or category…"
+          aria-label="Search inventory"
+        />
+      </section>
+
+      <!-- Inventory Table -->
+      <section class="table-section">
+        <h2>Inventory <span id="result-count"></span></h2>
+        <div class="table-wrapper">
+          <table id="inventory-table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Qty</th>
+                <th>Min</th>
+                <th>Price</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="inventory-body">
+              <!-- rows injected by script.js -->
+            </tbody>
+          </table>
+          <p id="empty-msg" class="empty-msg hidden">No items found.</p>
+        </div>
+      </section>
+
+    </div><!-- /inventory-panel -->
+
+    <!-- ════════ RIGHT — AI chat panel ════════ -->
+    <aside class="chat-panel" id="chat-panel" aria-label="AI Inventory Assistant">
+
+      <div class="chat-header">
+        <div class="chat-header-title">
+          <span class="ai-dot"></span>
+          AI Inventory Assistant
+        </div>
+        <button class="chat-close" id="chat-close" aria-label="Close assistant">✕</button>
+      </div>
+
+      <div class="chat-messages" id="chat-messages" role="log" aria-live="polite">
+        <!-- messages injected by script.js -->
+      </div>
+
+      <div class="chat-suggestions" id="chat-suggestions">
+        <button class="suggestion-btn" data-q="Give me a full inventory summary.">Inventory summary</button>
+        <button class="suggestion-btn" data-q="Which items are low on stock?">Low stock items</button>
+        <button class="suggestion-btn" data-q="What should I restock first?">Restock advice</button>
+        <button class="suggestion-btn" data-q="How many categories do I have?">Categories</button>
+      </div>
+
+      <form class="chat-input-row" id="chat-form">
+        <input
+          type="text"
+          id="chat-input"
+          placeholder="Ask about your inventory…"
+          autocomplete="off"
+          aria-label="Chat input"
+        />
+        <button type="submit" aria-label="Send">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
+          </svg>
+        </button>
+      </form>
+
+    </aside><!-- /chat-panel -->
+
+  </div><!-- /app-shell -->
+
+  <script src="script.js"></script>
+</body>
+</html>
